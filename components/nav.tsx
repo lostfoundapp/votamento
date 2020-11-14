@@ -1,11 +1,12 @@
-import Link from 'next/link'
+import { NextComponentType } from 'next';
+import Link from 'next/link';
 
 const links = [
   { href: 'https://github.com/vercel/next.js', label: 'GitHub' },
   { href: 'https://nextjs.org/docs', label: 'Docs' },
 ]
 
-export default function Nav() {
+const Nav: NextComponentType = () => {
   return (
     <nav>
       <ul className="flex justify-between items-center p-8">
@@ -27,3 +28,4 @@ export default function Nav() {
     </nav>
   )
 }
+export default Nav;

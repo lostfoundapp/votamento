@@ -1,10 +1,12 @@
+import { NextPage } from 'next';
+
 import Nav from '../components/nav'
 
-export default function IndexPage() {
+const IndexPage: NextPage = () => {
   return (
     <div>
       <Nav />
-      <div className="py-20">
+      <div className="py-80">
         <h1 className="text-5xl text-center text-accent-1">
           Next.js + Tailwind CSS
         </h1>
@@ -12,3 +14,5 @@ export default function IndexPage() {
     </div>
   )
 }
+
+export default IndexPage;
