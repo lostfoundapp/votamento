@@ -8,15 +8,10 @@ import apiCandidatos from '../utils/candidatos'
 import swal from 'sweetalert';
 
 const { Meta } = Card;
-interface dados {
-  politico: number
-}
 
 const IndexPage: NextPage = () => {
   const [loading, setLoading] = useState(false)
   const [candidatos, setCandidatos] = useState([])
-  const [erro, setErro] = useState(false)
-  const [success, setSuccess] = useState(false)
 
   useEffect(() => {
     setCandidatos(apiCandidatos);
@@ -28,7 +23,6 @@ const IndexPage: NextPage = () => {
       politico: id
     }
     if (token) {
-      setErro(true) 
       swal("Você já votou!!!", "Aguarde o resultado", "info"); 
     } else {
       const res = await axios.post('/api/vote', da)

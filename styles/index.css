@@ -81,6 +81,32 @@
   position: absolute;
   z-index: 1;
 }
+
+.resultado-votamento{
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  color: #19612e;
+  margin-bottom: 30px;
+}
+.lista-resultado{
+  width: 80%;
+  margin: auto 10%;
+}
+.avatar{
+  width: 120px;
+  height: 120px;
+}
+.ant-list-item-meta-title{
+  font-size: 20px;
+}
+.ant-list-item-meta-description{
+  font-size: 25px;
+  color: #19612e;
+}
+.ant-list-item-meta{
+  align-items: center;
+}
 @media only screen and (max-width: 768px) {
   .flex-box {
     display: flex;
@@ -126,5 +152,11 @@
 .rede{
   position: absolute;
   right: 5px;
+}
+.resultado-votamento{
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: #19612e;
 }
 }
