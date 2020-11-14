@@ -1,4 +1,5 @@
 import { AppProps } from 'next/app';
+import "antd/dist/antd.css";
 import '../styles/index.css'
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {

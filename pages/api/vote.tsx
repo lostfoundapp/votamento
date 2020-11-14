@@ -20,7 +20,7 @@ export default async (
         }: {
             politico: number;
         } = req.body;
-
+        
         if (!politico) {
             res.status(400).json({ error: 'Nenhum politico escolhido...' });
             return;

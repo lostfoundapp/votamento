@@ -16,3 +16,115 @@
 /* Stop purging. */
 
 /* Your own custom utilities */
+.flex-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: auto 10%;
+}
+
+.card-box{
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 15px;
+  width: 240px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  box-shadow: 5px 8px #888888;
+}
+.card-box img{
+   border-radius: 10px 10px 0 0;
+   -webkit-border-radius: 10px 10px 0 0;
+   -moz-border-radius: 10px 10px 0 0;
+   -ms-border-radius: 10px 10px 0 0;
+   -o-border-radius: 10px 10px 0 0;
+   max-height: 300px;
+   object-fit: cover;
+}
+.card-box .ant-card-body{
+  padding-top: 24px;
+  padding-bottom: 18px;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+.btn-votar{
+  cursor: pointer;
+}
+.btn-votar span{  
+  text-align: center;
+  font-weight: bold;
+}
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.votamento-css{
+  font-size: 35px;
+  font-weight: bold;
+  color: #19612e;
+}
+.leozito{
+  margin-left: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.rede{
+  margin-right: 15px;
+  font-size: 15px;
+}
+.alert{
+  position: absolute;
+  z-index: 1;
+}
+@media only screen and (max-width: 768px) {
+  .flex-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    margin: 0;
+  }
+  .card-box{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 15px;
+    width: 100%;
+  }
+  .card-box img{
+    border-radius: 10px 10px 0 0;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    -ms-border-radius: 10px 10px 0 0;
+    -o-border-radius: 10px 10px 0 0;
+    max-height: 400px;
+    object-fit: cover;
+ }
+ .nav{
+   margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.votamento-css{
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: #19612e;
+  margin-top: 25px;
+}
+.leozito{
+  position: absolute;
+  left: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.rede{
+  position: absolute;
+  right: 5px;
+}
+}
