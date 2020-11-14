@@ -8,7 +8,7 @@ const IndexPage: NextPage = () => {
       <Nav />
       <div className="py-80">
         <h1 className="text-5xl text-center text-accent-1">
-          Next.js + Tailwind CSS
+          Next.js
         </h1>
       </div>
     </div>
