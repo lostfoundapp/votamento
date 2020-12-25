@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import FileBase64 from 'react-file-base64';
 import swal from 'sweetalert';
-
+import { MdPlayCircleFilled, MdStop } from 'react-icons/md';
 
 const IndexPage = () => {
   const [filess, setFiles] = useState([])
-
+  let recorder, stream;
   let x = -1;
   const getFiles = files => {
 
@@ -68,15 +68,48 @@ const IndexPage = () => {
       i++
     }
   }
+
+  async function startRecording() {
+    const video = document.querySelector("video");
+
+    stream = await navigator.mediaDevices.getDisplayMedia({
+      video: { mediaSource: "screen" }
+    });
+    recorder = new MediaRecorder(stream);
+
+    const chunks = [];
+    recorder.ondataavailable = e => chunks.push(e.data);
+    recorder.onstop = e => {
+      const completeBlob = new Blob(chunks, { type: chunks[0].type });
+      video.src = URL.createObjectURL(completeBlob);
+
+    };
+
+    recorder.start();
+    document.getElementById("stop").style.display = ''
+    document.getElementById("start").style.display = 'none'
+
+  }
+
+  async function stopRecording() {
+    document.getElementById("stop").style.display = 'none'
+    document.getElementById("start").style.display = ''
+    document.getElementById("bx-natalino").style.display = 'none'
+    recorder.stop();
+    stream.getVideoTracks()[0].stop();
+  }
+
   useEffect(() => {
     bubbles()
     if (filess.length > 0) {
       startTimer();
+      document.getElementById("stop").style.display = 'none'
     }
   }, [filess])
 
   return (
-    <section>
+    <>
+      <section id="bx-natalino">
         {filess.length <= 0 &&
           <FileBase64
             multiple={true}
@@ -97,7 +130,34 @@ const IndexPage = () => {
             </div>
           </>
         }
-    </section>
+      </section>
+      <section id="vd-natalino">
+
+        {filess.length > 0 &&
+          <video autoPlay />
+        }
+      </section>
+      {filess.length > 0 &&
+        <>
+          <div className="btns">
+            <MdPlayCircleFilled
+              id="start"
+              color="#fff"
+              size={40}
+              onClick={() => startRecording()}
+              className="btn"
+            />
+            <MdStop
+              id="stop"
+              color="#fff"
+              size={50}
+              onClick={() => stopRecording()}
+              className="btn" />
+          </div>
+          
+        </>
+      }
+    </>
   )
 }
 
