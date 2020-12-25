@@ -9,13 +9,15 @@
   "dependencies": {
     "antd": "^4.8.2",
     "axios": "^0.21.0",
+    "instatouch": "^2.3.3",
     "mongodb": "^3.6.3",
     "next": "latest",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.11.0",
     "sweetalert": "^2.1.2",
-    "swr": "^0.3.8"
+    "swr": "^0.3.8",
+    "react-file-base64": "^1.0.3"
   },
   "devDependencies": {
     "@types/mongodb": "^3.5.33",
