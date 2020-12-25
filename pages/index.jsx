@@ -70,6 +70,7 @@ const IndexPage = () => {
   }
 
   async function startRecording() {
+    alert("video screen")
     const video = document.querySelector("video");
 
     stream = await navigator.mediaDevices.getDisplayMedia({
@@ -154,7 +155,7 @@ const IndexPage = () => {
               onClick={() => stopRecording()}
               className="btn" />
           </div>
-          
+
         </>
       }
     </>
