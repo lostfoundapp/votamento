@@ -7,7 +7,8 @@
     "start": "next start"
   },
   "dependencies": {
-    "antd": "^4.8.2",
+    "@ant-design/icons": "^4.3.0",
+    "antd": "^4.10.0",
     "axios": "^0.21.0",
     "instatouch": "^2.3.3",
     "mongodb": "^3.6.3",

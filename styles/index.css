@@ -20,7 +20,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: #ff2a2a;
 }
 body{
   overflow: hidden;
@@ -367,4 +366,40 @@ video{
     height: 100%;
     object-fit: cover;
 }
+}
+
+.header-insta{
+  font-family: 'Satisfy', cursive;
+  font-size: 4em;
+}
+.ant-layout-header {
+  height: 74px !important;
+}
+.footer-insta{
+  font-family: 'Satisfy', cursive;
+  font-size: 1em;
+  font-weight: 600;
+}
+.ant-card-bordered {
+  border: 0px solid #f0f0f0 !important;
+}
+.ant-list-split .ant-list-item {
+  border-bottom: 0px solid #f0f0f0 !important;
+}
+.input-button{
+  margin-top: 20px;
+  width: 70% !important;
+}
+
+.ant-btn-primary {
+  background: rgba(0,0,0,0.7);
+  border-color: rgba(0,0,0,0.7);
+}
+.ant-btn-primary:hover {
+  background:#000;
+  border-color: #000;
+}
+
+.ant-btn-primary svg {
+  width: 1.5em !important;
 }
