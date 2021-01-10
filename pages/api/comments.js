@@ -31,6 +31,7 @@ export default async (req, res) => {
       res.status(200).json({ dataRest: dados });
     } catch (error) {
       console.log('ERROR: ', error);
+      res.status(500).json(error);
     }
   } else {
     res.status(400).json({ error: 'Wrong request method' });
