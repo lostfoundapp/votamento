@@ -311,10 +311,6 @@ section input{
   cursor: pointer;
 }
 
-video{
-  width: 80vw;
-}
-
 @media(max-width: 700px) {
   .btns{
     width: 100%;
@@ -392,14 +388,107 @@ video{
 }
 
 .ant-btn-primary {
-  background: rgba(0,0,0,0.7);
-  border-color: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.7) !important;
+  border-color: rgba(0,0,0,0.7) !important;
 }
 .ant-btn-primary:hover {
-  background:#000;
-  border-color: #000;
+  background:#000 !important;
+  border-color: #000 !important;
 }
 
 .ant-btn-primary svg {
   width: 1.5em !important;
+}
+.ant-list{
+  margin-top: 20px;
+}
+.ant-list-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  cursor: pointer;
+  width: 70% !important;
+  margin: auto 15%;
+}
+.ant-list-item{
+  padding: 0!important;
+}
+
+.ant-modal-footer{
+  display: none;
+}
+.view-timeline .ant-modal-close-x {
+  display: flex !important;
+  width: 46px;
+  height: 46px;
+  font-size: 26px !important;
+  font-style: normal;
+  text-align: center;
+  text-transform: none;
+  text-rendering: auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.2);
+  color: #FFF;
+}
+.view-timeline  .ant-modal-body {
+  padding: 0 !important;
+}
+
+.modal-login .ant-modal-content  {
+  border-radius: 10px !important;
+  -webkit-border-radius: 10px !important;
+  -moz-border-radius: 10px !important;
+  -ms-border-radius: 10px !important;
+  -o-border-radius: 10px !important;
+}
+.modal-login .ant-modal-header {
+  padding: 12px 12px !important;
+  border-radius: 10px !important;
+  -webkit-border-radius: 10px !important;
+  -moz-border-radius: 10px !important;
+  -ms-border-radius: 10px !important;
+  -o-border-radius: 10px !important;
+}
+.modal-login  .ant-modal-body {
+  text-align: right;
+}
+.btn-comments{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+@media(max-width: 700px) {
+  .header-insta{
+    width: 90% !important;
+    margin: auto 5%;
+    font-family: 'Satisfy', cursive;
+    font-size: 2em;
+  }
+  .ant-layout-header {
+    padding: 0 !important
+  }
+  .input-button{
+    width: 90% !important;
+    margin: auto 5%;
+  }
+  .ant-list-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    cursor: pointer;
+    width: 90% !important;
+    margin: auto 5%;
+  }
 }
