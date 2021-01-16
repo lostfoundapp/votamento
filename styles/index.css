@@ -366,10 +366,11 @@ section input{
 
 .header-insta{
   font-family: 'Satisfy', cursive;
-  font-size: 4em;
+  font-size: 2em;
 }
 .ant-layout-header {
-  height: 74px !important;
+  line-height: 35px !important;
+  height: 35px !important;
 }
 .footer-insta{
   font-family: 'Satisfy', cursive;
@@ -470,6 +471,75 @@ section input{
   align-items: center;
   cursor: pointer;
 }
+
+
+
+.btn-compare{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+.btn-compare button{
+  margin-left: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.div__json{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.div__textarea{
+  width: 47%;
+  height: auto;
+}
+.div__textarea textarea.ant-input {
+  height: 35.5% !important;
+  min-height: 150px;
+}
+.div__textarea p{
+  font-size: 1em;
+  font-weight: 300;
+}
+.div__result{
+  width: 47%;
+  height: auto;
+}
+.div__result p{
+  font-size: 1em;
+  font-weight: 300;
+}
+.react-json-view{
+  min-height: 150px !important; 
+  padding: 10px;
+}
+.view-json{
+  padding-bottom: 0px !important;
+  width: 80% !important;
+  top: 20px !important;
+}
+.view-json .ant-modal-content{
+  height: auto !important;
+  
+}
+
+.view-json .ant-modal-body .c-json-view{
+  max-height: 500px !important;
+  overflow-y: auto;
+}
+.btn__comparar{
+  margin-top: 20px;
+  float:right;
+  margin-right: 10px;
+}
+
 @media(max-width: 700px) {
   .header-insta{
     width: 90% !important;
@@ -490,5 +560,17 @@ section input{
     cursor: pointer;
     width: 90% !important;
     margin: auto 5%;
+  }
+  .div__json{
+    flex-direction: column !important;
+  }
+  .div__textarea{
+    width: 100% !important;
+  }
+  .div__result{
+    width: 100% !important;
+  }
+  .view-json{
+    width: 100% !important;
   }
 }
