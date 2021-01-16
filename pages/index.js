@@ -32,14 +32,13 @@ const IndexPage = () => {
 
   const handleCompare1 = value => {
     setInputCompare1(value ? JSON.parse(value) : [])
-    console.log(inputCompare1, inputCompare2)
   }
 
   const handleCompare2 = value => {
     setInputCompare2(value ? JSON.parse(value) : [])
   }
   const handleCompare = () => {
-    if (inputCompare1.length > 0 && inputCompare2.length > 0) {
+    if (inputCompare1.length !== 0 && inputCompare2.length !== 0) {
       setTIsVisibleCompare(true)
     }
   }
@@ -70,23 +69,27 @@ const IndexPage = () => {
                 <>
                   <div className="div__textarea">
                     <p>
-                      Tipo: {inputFormatter.length ? `Array com ${inputFormatter.length === 1 ? inputFormatter.length + ' objeto' : inputFormatter.length + ' objetos'}` : 'objeto'}
+                      Tipo: {inputCompare1.length ? `Array com ${inputCompare1.length === 1 ? inputCompare1.length + ' objeto' : inputCompare1.length + ' objetos'}` : 'objeto'}
                     </p>
                     <TextArea
+                      key="1"
                       placeholder='{
                         "key": "value"
                       };'
+
                       onChange={(e) => handleCompare1(e.target.value)}
                     />
                   </div>
                   <div className="div__textarea">
                     <p>
-                      Tipo: {inputFormatter.length ? `Array com ${inputFormatter.length === 1 ? inputFormatter.length + ' objeto' : inputFormatter.length + ' objetos'}` : 'objeto'}
+                      Tipo: {inputCompare2.length ? `Array com ${inputCompare2.length === 1 ? inputCompare2.length + ' objeto' : inputCompare2.length + ' objetos'}` : 'objeto'}
                     </p>
                     <TextArea
+                      key="2"
                       placeholder='{
                       "key": "value"
                     };'
+
                       onChange={(e) => handleCompare2(e.target.value)}
                     />
                   </div>
@@ -98,12 +101,13 @@ const IndexPage = () => {
                         Tipo: {inputFormatter.length ? `Array com ${inputFormatter.length === 1 ? inputFormatter.length + ' objeto' : inputFormatter.length + ' objetos'}` : 'objeto'}
                       </p>
                       <TextArea
+                        key="3"
                         placeholder='{
-                  "key": "value"
-                };'
+                          "key": "value"
+                        };'
                         onChange={(e) => handleFormatter(e.target.value)}
                       />
-                    </div>{console.log(isCompare)}
+                    </div>
                     <div className="div__result">
                       <p>Json Formatado</p>
                       <DynamicReactJson src={inputFormatter} theme="threezerotwofour" />
