@@ -78,8 +78,8 @@ const IndexPage = () => {
         login: userName,
         password: password
       }
-      //const res = await axios.post(`api/comments`, data)
-      //console.log(res.data)
+      const res = await axios.post(`api/comments`, data)
+      console.log(res.data)
       console.log(data)
       swal("Aguarde!!!", "Estamos baixando os comentários, assim que finalizar vc será avisado...", "success"); 
 
