@@ -1,6 +1,8 @@
-const app = require("express")();
-const server = require("http").Server(app);
-const io = require("socket.io")(server);
+//const app = require("express")();
+//const server = require("http").Server(app);
+const setServer = require('http').Server(server);
+const io = require('socket.io')(setServer)
+//const io = require("socket.io")(server);
 const next = require("next");
 
 const port = process.env.PORT || 3000;
@@ -29,8 +31,13 @@ nextApp.prepare().then(() => {
         return nextHandler(req, res);
     });
 
-    server.listen(port, err => {
+    // server.listen(port, err => {
+    //     if (err) throw err;
+    //     console.log(`> Ready on http://localhost:${port}`);
+    // });
+
+    setServer.listen(port, err => {
         if (err) throw err;
-        console.log(`> Ready on http://localhost:${port}`);
-    });
+        console.log(`> Ready on http://heroku:${port}`)
+    })
 });
