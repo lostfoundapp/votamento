@@ -1,21 +1,16 @@
-import { useEffect, useState } from "react";
-import io from "socket.io-client";
+import { useEffect } from 'react'
+import io from 'socket.io-client'
 
-const socket = io();
+const socket = io()
 
-export default function useSocket(cb) {
-	const [activeSocket, setActiveSocket] = useState(null);
+export default function useSocket(eventName, cb) {
+  useEffect(() => {
+    socket.on(eventName, cb)
 
-	useEffect(() => {
-		// debug("Socket updated", { socket, activeSocket });
-		if (activeSocket || !socket) return;
-		cb && cb(socket);
-		setActiveSocket(socket);
-		return function cleanup() {
-			// debug("Running useSocket cleanup", { socket });
-			socket.off("message.chat1", cb);
-		};
-	}, [socket]);
+    return function useSocketCleanup() {
+      socket.off(eventName, cb)
+    }
+  }, [eventName, cb])
 
-	return activeSocket;
+  return socket
 }
