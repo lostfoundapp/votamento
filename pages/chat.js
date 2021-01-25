@@ -124,9 +124,9 @@ export default function Blah(props) {
     );
 }
 
-Blah.getInitialProps = async () => {
-    const response = await fetch('http://localhost:3000/messages/chat1')
-    const messages = await response.json()
+// Blah.getInitialProps = async () => {
+//     const response = await fetch('http://localhost:3000/messages/chat1')
+//     const messages = await response.json()
 
-    return { messages }
-}
+//     return { messages }
+// }
