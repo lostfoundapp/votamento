@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import io from 'socket.io-client'
 import { Layout, List, Input, Modal, Form, Button } from 'antd';
 import axios from 'axios'
 import { MdTouchApp } from 'react-icons/md';
@@ -15,6 +16,28 @@ const IndexPage = () => {
   const [isVideo, setTIsVideo] = useState(false)
   const [shortCode, setShortCode] = useState('')
 
+  useEffect(() => {
+    fetch('/api/socketio').finally(() => {
+      const socket = io()
+
+      socket.on('connect', () => {
+        console.log('connect')
+        socket.emit('hello')
+      })
+
+      socket.on('hello', data => {
+        console.log('hello', data)
+      })
+
+      socket.on('a user connected', () => {
+        console.log('a user connected')
+      })
+
+      socket.on('disconnect', () => {
+        console.log('disconnect')
+      })
+    })
+  })
 
   useEffect(() => {
     const userName = localStorage.getItem('userName');

@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function Blah(props) {
     const [field, setField] = useState('')
     const [newMessage, setNewMessage] = useState(0)
-    console.log(props.messages)
+    
     const [messages, setMessages] = useState([])
     //const [messages, setMessages] = useState([]);
     const [message, setMessage] = useState([]);
@@ -23,14 +23,15 @@ export default function Blah(props) {
     useSocket('message.chat2', () => {
         setNewMessage(newMessage => newMessage + 1)
     })
-    // useEffect(() => {
-    //     if (socket) {
-    //         socket.on("message.chat1", message => {
-    //             setMessages(messages => [...messages, message]);
-    //             setToastMsg(message)
-    //         });
-    //     }
-    // }, [socket]);
+
+    useEffect(() => {
+        if (socket) {
+            socket.on("message.chat1", message => {
+                setMessages(messages => [...messages, message]);
+                setToastMsg(message)
+            });
+        }
+    }, [socket]);
 
     useEffect(() => {
         if (toastmsg) {
