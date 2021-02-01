@@ -12,25 +12,30 @@ export default async (req, res) => {
       const shortcode = req.body.shortcode;
       let dados = []
       const data = await getComments(client, shortcode, '')
-      data.edges.forEach(item => {
-        dados.push(item)
-      })
-      let hasNextPage = data.page_info.has_next_page;
-      let endCursor = data.page_info.end_cursor;
-
-      while (hasNextPage) {
-        const dataPage = await getComments(client, shortcode, endCursor)
-        dataPage.edges.forEach(element => {
-          dados.push(element)
-        });
-        endCursor = dataPage.page_info.end_cursor;
-        hasNextPage = dataPage.page_info.has_next_page;
-        console.log(Date())
+      
+      if (data) {
+        data.edges.forEach(item => {
+          dados.push(item)
+        })
+        let hasNextPage = data.page_info.has_next_page;
+        let endCursor = data.page_info.end_cursor;
+  
+        while (hasNextPage) {
+          const dataPage = await getComments(client, shortcode, endCursor)
+          dataPage.edges.forEach(element => {
+            dados.push(element)
+          });
+          endCursor = dataPage.page_info.end_cursor;
+          hasNextPage = dataPage.page_info.has_next_page;
+          console.log(Date())
+          console.log(dados.length)
+        }
+  
       }
-
+      
       res.status(200).json({ dataRest: dados });
     } catch (error) {
-      console.log('ERROR: ', error);
+      //console.log('ERROR: ', error);
       res.status(500).json(error);
     }
   } else {

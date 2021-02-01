@@ -1,4 +1,4 @@
-import Server from 'socket.io-client';
+import Server from 'socket.io';
 
 const ioHandler = (req, res) => {
     console.log('*****')
