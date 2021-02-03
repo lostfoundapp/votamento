@@ -8,7 +8,7 @@ export default function consultaPlaca() {
     const [state, setState] = useState('')
     const handleVehiclePlate = async (value) => {
 
-        const res = await axios.get(`/api/placa/${value.toUpperCase()}`)
+        const res = await axios.get(`/api/placa/${value}`)
         if (res.data) {
             const data = Object.entries(res.data);
             setState(data)
@@ -37,7 +37,7 @@ export default function consultaPlaca() {
                         style={{ display: 'flex', flexDirection: 'column' }}
                         dataSource={state}
                         renderItem={item =>
-                            item[0] !== 'data' && item[1] !== '' &&(
+                            item[0] !== 'data' && item[1] !== '' && (
                                 <List.Item >
                                     {item[0]}: <strong> {item[1]}</strong>
                                 </List.Item>
