@@ -1,4 +1,4 @@
-import Server from 'socket.io';
+const Server = require('socket.io');
 
 const ioHandler = (req, res) => {
     console.log('*****')
@@ -40,12 +40,6 @@ const ioHandler = (req, res) => {
         console.log('socket.io already running')
     }
     res.end()
-}
-
-export const config = {
-    api: {
-        bodyParser: false
-    }
 }
 
 export default ioHandler

@@ -8524,6 +8524,13 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
+sinesp-api@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/sinesp-api/-/sinesp-api-3.0.0.tgz#4da20a2413d11cfd15d90f0a49d8e4da32f0fb28"
+  integrity sha512-tgZ5Ov3krtL8f/cMmsuV8RFkMFi9yNyFuiwtoh8NIA2yTjR/suz94x/cujhga+Y4xzKgvda4TqUguGlq72m2KQ==
+  dependencies:
+    request "^2.88.2"
+
 slash@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-2.0.0.tgz#de552851a1759df3a8f206535442f5ec4ddeab44"
